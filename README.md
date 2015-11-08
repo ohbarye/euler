@@ -1,4 +1,4 @@
 # euler
-Project Euler solutions in Python.
+Project Euler solutions in Python / Ruby.
 
 https://projecteuler.net/
