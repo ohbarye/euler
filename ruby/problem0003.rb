@@ -6,8 +6,7 @@
 def find_min_prime_factor (n)
   # Find the minimum prime factor from 2 to √n.
   # If no element does, return nil.
-  limit = Integer Math.sqrt(n)
-  2.upto(limit).lazy.select { |i| (n % i).zero? }.first()
+  2.upto(Math.sqrt(n)).lazy.select { |i| (n % i).zero? }.first
 end
 
 def find_max_prime_factor (n)
@@ -15,8 +14,8 @@ def find_max_prime_factor (n)
   # If the minimum prime factor is found,
   # call recursively with the value devided by the factor.
   # If it's not found, return the argument.
-  minFactor = find_min_prime_factor(n)
-  if minFactor.nil? then n else find_max_prime_factor(n / minFactor) end
+  minFactor = find_min_prime_factor n
+  minFactor.nil? ? n : find_max_prime_factor(n / minFactor)
 end
 
 p find_max_prime_factor(600851475143)
